@@ -34,6 +34,10 @@
 
 - fsm_state: 狀態機狀態
 
+## network: 網路連線
+
+- net_mgr: 連線管理
+
 ## pool: 物件池
 
 - cmpt_pool: 組件池
