@@ -1,6 +1,10 @@
 # 集中開發cocos 3.x時常用的工具, 非框架
 
-## component: 客製化組件
+## asset: 資源加載
+
+- asset_mgr: 資源管理
+
+## cmpts: 客製化組件
 
 - contain_adapt: 內容物適配
 
