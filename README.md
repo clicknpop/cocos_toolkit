@@ -18,6 +18,8 @@
 
 - replay_fx: 特效重播
 
+- spine_ctrl: spine控制
+
 ## extend: 功能擴展
 
 - array_extend: 陣列擴展
