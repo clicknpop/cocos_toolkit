@@ -1,5 +1,11 @@
 # 集中開發cocos 3.x時常用的工具, 非框架
 
+## component: 客製化組件
+
+- contain_adapt: 內容物適配
+
+- desktop_adapt: 背景適配
+
 ## pool: 物件池
 
 - cmpt_pool: 組件池
