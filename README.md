@@ -13,3 +13,5 @@
 ## utility: 其他
 
 - json_util: json工具
+
+- local_save: 本地存儲
