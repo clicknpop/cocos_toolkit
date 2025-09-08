@@ -135,7 +135,7 @@ export class SpineCtrl extends Component {
      */
     private listen(entry: sp.spine.TrackEntry, cb: SpinAnimEvent): void {
         if (entry == null || cb == null) {
-            //console.warn(`${this._spine.name} listen spine event failed`);
+            //console.warn(`${this._spine.name} listen spine event failed.`);
             return;
         }
 

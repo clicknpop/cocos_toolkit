@@ -124,7 +124,7 @@ export class BgmModule implements SingleObj {
      */
     play(clip: AudioClip, sec: number): void {
         if (clip == null) {
-            console.warn(`play bgm failed, audio is null`);
+            console.warn(`play bgm failed, audio is null.`);
             return;
         }
 
