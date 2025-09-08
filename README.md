@@ -4,6 +4,12 @@
 
 - asset_mgr: 資源管理
 
+## audio: 音樂音效
+
+- bgm_mgr: 音樂管理
+
+- sfx_mgr: 音效管理
+
 ## cmpts: 客製化組件
 
 - contain_adapt: 內容物適配
