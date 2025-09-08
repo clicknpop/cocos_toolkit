@@ -10,7 +10,7 @@ const { ccclass, property, requireComponent, menu } = _decorator;
  */
 @ccclass
 @requireComponent(UITransform)
-@menu('cmpts/desktop_adapt')
+@menu('客製化/背景適配')
 export class desktop_adapt extends Component {
 	/**
 	 * 
