@@ -16,6 +16,8 @@
 
 - desktop_adapt: 背景適配
 
+- replay_fx: 特效重播
+
 ## extend: 功能擴展
 
 - array_extend: 陣列擴展
