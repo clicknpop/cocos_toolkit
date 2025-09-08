@@ -28,6 +28,12 @@
 
 - str_extend: 字串擴展
 
+## fsm: 狀態機
+
+- fsm_base: 狀態機
+
+- fsm_state: 狀態機狀態
+
 ## pool: 物件池
 
 - cmpt_pool: 組件池
