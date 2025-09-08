@@ -10,7 +10,7 @@ export class SfxModule implements SingleObj {
     /**
      * 名稱
      */
-    public get name(): string { return this.constructor.name; }
+    get name(): string { return this.constructor.name; }
 
     /**
      * 音量
@@ -20,12 +20,12 @@ export class SfxModule implements SingleObj {
     /**
      * 音量
      */
-    public get vol(): number { return this._vol; }
+    get vol(): number { return this._vol; }
 
     /**
      * 音量
      */
-    public set vol(value: number) { this._vol = value.limit(0, 1); }
+    set vol(value: number) { this._vol = value.limit(0, 1); }
 
     /**
      * 暫停中
@@ -35,12 +35,12 @@ export class SfxModule implements SingleObj {
     /**
      * 暫停中
      */
-    public get paused(): boolean { return this._paused; }
+    get paused(): boolean { return this._paused; }
 
     /**
      * 暫停中
      */
-    public set paused(value: boolean) { this._paused = value; }
+    set paused(value: boolean) { this._paused = value; }
 
     /**
      * 音效池
@@ -56,7 +56,7 @@ export class SfxModule implements SingleObj {
      * 初始化
      * @param owner 音效模塊使用者
      */
-    public init(owner: Node) {
+    init(owner: Node) {
         this._host = new Node(this.name);
         owner.addChild(this._host);
 
@@ -70,7 +70,7 @@ export class SfxModule implements SingleObj {
     /**
      * 關閉
      */
-    public shutdown(): void {
+    shutdown(): void {
         this._pool.shutdown();
         this._pool = null;
 
@@ -82,7 +82,7 @@ export class SfxModule implements SingleObj {
     /**
      * 播放
      */
-    public async play(clip: AudioClip): Promise<void> {
+    async play(clip: AudioClip): Promise<void> {
         if (!clip || this.paused) {
             return;
         }

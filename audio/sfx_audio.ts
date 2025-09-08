@@ -16,31 +16,31 @@ export class SfxAudio extends AudioSource {
     /**
      * 編號
      */
-    public get pid(): number { return this._pid; }
+    get pid(): number { return this._pid; }
 
     /**
      * 播畢回調
      */
-    public onComplete: (cmpt: SfxAudio) => void = null;
+    onComplete: (cmpt: SfxAudio) => void = null;
 
     /**
      * 
      */
-    public onLoad(): void {
+    onLoad(): void {
         this.node.on(AudioSource.EventType.ENDED, this.onDone, this);
     }
 
     /**
      * 
      */
-    public onDestroy(): void { 
+    onDestroy(): void { 
         this.node.off(AudioSource.EventType.ENDED, this.onDone, this);
     }
 
     /**
      * 播放完畢
      */
-    public onDone(): void {
+    onDone(): void {
         this.onComplete && this.onComplete(this);
     }
 
@@ -48,7 +48,7 @@ export class SfxAudio extends AudioSource {
      * 初始化
      * @param id 編號
      */
-    public init(id: number): void {
+    init(id: number): void {
         this.node.name = id.toString();
         this._pid = id;
     }

@@ -6,7 +6,7 @@ export class UrlUtil {
      * 查詢網址參數
      * @param key 參數名稱
      */
-    public static query(key: string): string {
+    static query(key: string): string {
         let reg = new RegExp(`(^|&)` + key + `=([^&]*)(&|$)`, `i`);
         var list = window.location.search.substring(1).match(reg);
 
@@ -19,7 +19,7 @@ export class UrlUtil {
      * @param url 網址
      * @param params 參數
      */
-    public static jump(url: string, params?: { key: string, value: string | number }[]): void {
+    static jump(url: string, params?: { key: string, value: string | number }[]): void {
         if (params && params.length > 0) {
             url += `/?`;
             params.forEach(param => url += `${param.key}=${param.value}&`);
@@ -37,7 +37,7 @@ export class UrlUtil {
      * @param resolve 成功回調 
      * @param reject 失敗回調
      */
-    public static request(url: string, params: any, post: boolean, resolve: (resp: string) => void, reject: (resp: string) => void): void {
+    static request(url: string, params: any, post: boolean, resolve: (resp: string) => void, reject: (resp: string) => void): void {
         if (url == null || url.length <= 0) {
             return;
         }

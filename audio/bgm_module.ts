@@ -8,7 +8,7 @@ export class BgmModule implements SingleObj {
     /**
      * 名稱
      */
-    public get name(): string { return this.constructor.name; }
+    get name(): string { return this.constructor.name; }
 
     /**
      * 依賴
@@ -23,7 +23,7 @@ export class BgmModule implements SingleObj {
     /**
      * 音量
      */
-    public get vol(): number { return this._vol; }
+    get vol(): number { return this._vol; }
 
     /**
      * 是否已暫停
@@ -33,7 +33,7 @@ export class BgmModule implements SingleObj {
     /**
      * 是否已暫停
      */
-    public get paused(): boolean { return this._paused; }
+    get paused(): boolean { return this._paused; }
 
     /**
      * 音量緩動
@@ -49,7 +49,7 @@ export class BgmModule implements SingleObj {
      * 初始化
      * @summary 依賴
      */
-    public init(depend: AudioSource): void {
+    init(depend: AudioSource): void {
         this._depend = depend;
         this._vol = depend.volume;
         this._paused = false;
@@ -58,7 +58,7 @@ export class BgmModule implements SingleObj {
     /**
      * 關閉
      */
-    public shutdown(): void {
+    shutdown(): void {
         this.stop();
         this._depend = null;
     }
@@ -66,7 +66,7 @@ export class BgmModule implements SingleObj {
     /**
      * 設定音量
      */
-    public setVol(vol: number): void {
+    setVol(vol: number): void {
         vol = vol.limit(0, 1);
 
         if (vol == this.vol) {
@@ -80,7 +80,7 @@ export class BgmModule implements SingleObj {
     /**
      * 停止
      */
-    public stop(): void {
+    stop(): void {
         if (!this._depend.playing) {
             return;
         }
@@ -96,7 +96,7 @@ export class BgmModule implements SingleObj {
     /**
      * 暫停
      */
-    public pause(): void {
+    pause(): void {
         if (this.paused) {
             return;
         }
@@ -108,7 +108,7 @@ export class BgmModule implements SingleObj {
     /**
      * 續播
      */
-    public resume(): void {
+    resume(): void {
         if (!this._paused) {
             return;
         }
@@ -122,7 +122,7 @@ export class BgmModule implements SingleObj {
      * @param clip 音源
      * @param sec 音量漸變秒
      */
-    public play(clip: AudioClip, sec: number): void {
+    play(clip: AudioClip, sec: number): void {
         if (clip == null) {
             console.warn(`play bgm failed, audio is null`);
             return;

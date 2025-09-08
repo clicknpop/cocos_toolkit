@@ -6,7 +6,7 @@ export class RandUtil {
      * 用種子取亂數
      * @returns 0~1
      */
-    public static randBySeed(seed: number): number {
+    static randBySeed(seed: number): number {
         if (seed <= 0) {
             seed = Date.now();
         }
@@ -19,7 +19,7 @@ export class RandUtil {
      * @param max 最大值(不含)
      * @param min 最小值(含)
      */
-    public static randInt(max: number, min: number = 0): number {
+    static randInt(max: number, min: number = 0): number {
         max = Math.floor(max);
         min =  Math.ceil(min);
         return Math.floor(this.randFloat(max, min));
@@ -30,7 +30,7 @@ export class RandUtil {
      * @param max 最大值(不含)
      * @param min 最小值(含)
      */
-    public static randFloat(max: number, min: number = 0): number {
+    static randFloat(max: number, min: number = 0): number {
         return Math.random() * (max - min) + min;
     }
 
@@ -38,7 +38,7 @@ export class RandUtil {
      * 隨機百分比
      * @returns 是否小於(不含)此值
      */
-    public static randPercent(value: number): boolean {
+    static randPercent(value: number): boolean {
         return value < this.randFloat(100);
     }
 
@@ -47,7 +47,7 @@ export class RandUtil {
      * @param weights 權重列表
      * @returns 列表索引, -1代表失敗
      */
-    public static randWeights(weights: number[]): number {
+    static randWeights(weights: number[]): number {
         let len = weights.length;
 
         if (len <= 0) {

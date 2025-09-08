@@ -10,7 +10,7 @@ const { ccclass, property, requireComponent, menu } = _decorator;
  */
 @ccclass
 @requireComponent(UITransform)
-@menu('cmpts/contain_adapt')
+@menu('客製化/內容物適配')
 export class ContainAdapt extends Component {
 	/**
 	 * 初始寬

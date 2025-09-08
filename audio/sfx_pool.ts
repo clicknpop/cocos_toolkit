@@ -20,7 +20,7 @@ export class SfxPool extends ObjPool<typeof AudioSource, SfxAudio> {
      * 初始化
      * @param owner 音效池使用者, 使用無其他業務影響的乾淨節點
      */
-    public init(owner: Node): void {
+    init(owner: Node): void {
         super.init();
 
         SfxPool._count = 0;
@@ -30,7 +30,7 @@ export class SfxPool extends ObjPool<typeof AudioSource, SfxAudio> {
     /**
      * 關閉
      */
-    public shutdown(): void {
+    shutdown(): void {
         this._owner.removeAllChildren();
         this._owner = null;
 
