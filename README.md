@@ -16,6 +16,8 @@
 
 - desktop_adapt: 背景適配
 
+- framing_load: 分幀加載
+
 - replay_fx: 特效重播
 
 - spine_ctrl: spine控制
