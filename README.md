@@ -16,6 +16,8 @@
 
 - desktop_adapt: 背景適配
 
+- framing_load: 分幀加載
+
 - replay_fx: 特效重播
 
 - spine_ctrl: spine控制
@@ -52,12 +54,18 @@
 
 - angle_util: 角度工具
 
+- encrypt_util: 加解密
+
 - json_util: json工具
 
 - local_save: 本地存儲
+
+- log_util: 日誌打印
 
 - rand_util: 亂數隨機
 
 - url_util: 網址處理
 
 - wait_util: 異步等待
+
+- work_chain: 工作鏈

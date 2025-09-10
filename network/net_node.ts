@@ -99,11 +99,11 @@ export class NetNode {
         // 初始化socket
         this.initSocket();
         
-        this._hint?.connecting(true);
+        this._hint?.onConnecting(true);
 
         // 連線失敗
         if (!this._socket.connect(opt)) {
-            this._hint?.connecting(false);
+            this._hint?.onConnecting(false);
             return false;
         }
 
@@ -150,7 +150,7 @@ export class NetNode {
 
             // 尚有其他請求
             let len = this._requests.length;
-            this._hint?.requesting(len > 0);
+            this._hint?.onRequesting(len > 0);
 
             // 觸發事件
             let handlers = this._handlers.get(cmd);
@@ -163,15 +163,15 @@ export class NetNode {
 
             this.clearTimers();
 
-            this._hint?.connecting(false);
-            this._hint?.reconnecting(false);
+            this._hint?.onConnecting(false);
+            this._hint?.onReconnecting(false);
 
             this._state = NetState.Resending;
 
             // 重送所有請求
             if (true) {
                 let len = this._requests.length;
-                this._hint?.requesting(len > 0);
+                this._hint?.onRequesting(len > 0);
 
                 console.warn(`resending requests.`, len, this._connOpt.addr);
 
@@ -194,7 +194,7 @@ export class NetNode {
                 return;
             }
 
-            this._hint?.reconnecting(true);
+            this._hint?.onReconnecting(true);
             this.clearTimers();
 
             // 開始重連
@@ -241,9 +241,9 @@ export class NetNode {
 
         this._requests = [];
 
-        this._hint?.connecting(false);
-        this._hint?.reconnecting(false);
-        this._hint?.requesting(false);
+        this._hint?.onConnecting(false);
+        this._hint?.onReconnecting(false);
+        this._hint?.onRequesting(false);
     }
 
     /**
@@ -303,7 +303,7 @@ export class NetNode {
      * @param resp 回應處理
      */
     sendReq(cmd: NetCmd, buf: NetBuf, resp: NetHandler): void {
-        this._hint?.requesting(true);
+        this._hint?.onRequesting(true);
 
         let req = { cmd: cmd, buf: buf, resp: resp };
         this._requests.push(req);

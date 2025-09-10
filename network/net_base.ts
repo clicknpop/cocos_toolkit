@@ -146,19 +146,19 @@ export interface NetHint {
      * 連線中
      * @param enable 開關
      */
-    connecting(enable: boolean): void;
+    onConnecting(enable: boolean): void;
 
     /**
      * 重新連線中
      * @param enable 開關
      */
-    reconnecting(enable: boolean): void;
+    onReconnecting(enable: boolean): void;
 
     /**
      * 數據請求中
      * @param enable 開關
      */
-    requesting(enable: boolean): void;
+    onRequesting(enable: boolean): void;
 }
 
 /**
