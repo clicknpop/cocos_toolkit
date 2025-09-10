@@ -16,7 +16,7 @@ export class EncryptUtil {
      * @returns iv(initialization vector)
      * @summary 一種固定長度的隨機數, 用於增強加密算法的安全性
      */
-    public static getIV(str: string): cryptoES.WordArray {
+    static getIV(str: string): cryptoES.WordArray {
         return cryptoES.Hex.parse(str);
     }
 
