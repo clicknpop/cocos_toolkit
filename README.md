@@ -58,6 +58,8 @@
 
 - local_save: 本地存儲
 
+- log_util: 日誌打印
+
 - rand_util: 亂數隨機
 
 - url_util: 網址處理
